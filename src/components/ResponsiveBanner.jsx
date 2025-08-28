@@ -24,37 +24,41 @@ export default function BalanceHero({
       {/* Top background */}
       <div className="relative w-full overflow-hidden" style={{ backgroundColor: colors.topBg }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative h-[500px] sm:h-[540px] lg:h-[580px]">
+          {/* Height responsive */}
+          <div className="relative h-[240px] sm:h-[360px] md:h-[460px] lg:h-[560px]">
             {/* BALANCE word */}
             <div className="absolute inset-0 flex items-center justify-center select-none" aria-hidden>
               <span
                 className="font-extrabold tracking-[0.06em] leading-none text-center"
-                style={{ fontSize: "min(18vw, 230px)", color: colors.overlayWord }}
+                style={{ fontSize: "clamp(40px, 18vw, 220px)", color: colors.overlayWord }}
               >
                 BALANCE
               </span>
             </div>
 
-            {/* Bowls aligned like reference */}
+            {/* Bowls */}
             <img
               src={bowls.left}
               alt="Bowl left"
-              className="absolute left-6 top-[65%] h-52 w-52 -translate-y-1/2 rounded-full object-cover shadow-2xl ring-1 ring-black/30"
+              className="pointer-events-none select-none absolute left-2 top-[66%] h-16 w-16 -translate-y-1/2 rounded-full object-cover shadow-xl ring-1 ring-black/30 sm:left-4 sm:h-28 sm:w-28 md:left-6 md:h-40 md:w-40 lg:h-52 lg:w-52"
             />
+
             <img
               src={bowls.midLeft}
               alt="Bowl mid left"
-              className="absolute left-[32%] top-[5%] h-60 w-60 -translate-x-1/2 rounded-full object-cover shadow-2xl ring-1 ring-black/30"
+              className="pointer-events-none select-none absolute hidden sm:block left-[30%] top-[4%] h-20 w-20 -translate-x-1/2 rounded-full object-cover shadow-xl ring-1 ring-black/30 sm:h-28 sm:w-28 md:h-44 md:w-44 lg:h-60 lg:w-60"
             />
+
             <img
               src={bowls.midRight}
               alt="Bowl mid right"
-              className="absolute left-[65%] top-[12%] h-60 w-60 -translate-x-1/2 rounded-full object-cover shadow-2xl ring-1 ring-black/30"
+              className="pointer-events-none select-none absolute hidden sm:block left-[66%] top-[10%] h-20 w-20 -translate-x-1/2 rounded-full object-cover shadow-xl ring-1 ring-black/30 sm:h-28 sm:w-28 md:h-44 md:w-44 lg:h-60 lg:w-60"
             />
+
             <img
               src={bowls.right}
               alt="Bowl right"
-              className="absolute right-6 top-[65%] h-52 w-52 -translate-y-1/2 rounded-full object-cover shadow-2xl ring-1 ring-black/30"
+              className="pointer-events-none select-none absolute right-2 top-[66%] h-16 w-16 -translate-y-1/2 rounded-full object-cover shadow-xl ring-1 ring-black/30 sm:right-4 sm:h-28 sm:w-28 md:right-6 md:h-40 md:w-40 lg:h-52 lg:w-52"
             />
 
             <div className="h-full" />
@@ -64,10 +68,10 @@ export default function BalanceHero({
 
       {/* Bottom green band */}
       <div style={{ backgroundColor: colors.bandBg }}>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:py-16 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-16 md:py-16 md:px-8">
           {/* Left heading */}
           <div>
-            <h2 className="text-5xl font-extrabold leading-tight text-white sm:text-6xl">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white">
               lunch made
               <br />
               lighter<span style={{ color: colors.dot }}>.</span>
@@ -76,17 +80,17 @@ export default function BalanceHero({
 
           {/* Right content */}
           <div className="max-w-xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide" style={{ color: colors.subCopy }}>
+            <p className="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-wide" style={{ color: colors.subCopy }}>
               small rice bowls. big flavour.
             </p>
-            <p className="text-base leading-relaxed" style={{ color: colors.subCopy }}>
+            <p className="text-sm sm:text-base leading-relaxed" style={{ color: colors.subCopy }}>
               try our new small rice bowls for the perfect lighter options. choose your flavours and keep it fresh,
               filling, and from just 9.95.
             </p>
 
             <button
               onClick={onOrder}
-              className="mt-8 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold shadow-sm transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="mt-5 sm:mt-8 inline-flex items-center gap-2 rounded-md px-4 py-2.5 sm:px-6 sm:py-3 text-sm font-semibold shadow-sm transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{ backgroundColor: colors.ctaBg, color: colors.ctaText }}
             >
               order now
@@ -99,5 +103,5 @@ export default function BalanceHero({
         </div>
       </div>
     </section>
-  );
+  );
 }
